@@ -93,7 +93,7 @@ export default props => {
 
 
     return <div>
-        <h1>Our React App</h1>
+        <h1>Statvis</h1>
         <div className="sidebar">
         Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
         </div>
