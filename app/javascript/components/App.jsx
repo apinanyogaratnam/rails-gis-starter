@@ -61,7 +61,7 @@ export default props => {
             map.current.on('click', 'places-layer', (e) => {
                 // Copy coordinates array.
                 const coordinates = e.features[0].geometry.coordinates.slice();
-                const { name, description } = e.features[0].properties;
+                const { name, description, rating } = e.features[0].properties;
                 
                 // Ensure that if the map is zoomed out such that multiple
                 // copies of the feature are visible, the popup appears
@@ -72,7 +72,17 @@ export default props => {
 
                 const isVulger = name.includes('Random');
 
-                const html = `<em>${isVulger ? 'Ignore this place' : name}</em><br/>${description}.<br/>Horray for ice-creamm!!!`;
+                const html = ```
+                    <em>
+                        ${isVulger ? 'Ignore this place' : name}
+                    </em>
+                    <br/>
+                    ${description}.
+                    <br/>
+                    ${rating} / 10
+                    <br />
+                    Horray for ice-creamm!!!
+                ```;
                 
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
