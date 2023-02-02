@@ -73,7 +73,7 @@ export default props => {
                 const isVulger = name.includes('Random');
                 const isSuitableRating = rating > 5;
 
-                const html = ```
+                const html = `
                     <em>
                         ${isVulger ? 'Ignore this place' : name}
                     </em>
@@ -83,7 +83,7 @@ export default props => {
                     ${rating} / 10
                     <br />
                     ${isSuitableRating ? "Horray for ice-creamm!!!" : "This is not ice-cream. Stay away!"}
-                ```;
+                `;
                 
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
