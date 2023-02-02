@@ -69,10 +69,14 @@ export default props => {
                 while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
                     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
                 }
+
+                const isVulger = name.includes('Random');
+
+                const html = `<em>${isVulger ? 'Ignore this place' : name}</em><br/>${description}.<br/>Horray for ice-creamm!!!`;
                 
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
-                    .setHTML(`<em>${name}</em><br/>${description}.<br/>Horray for ice-creamm!!!`)
+                    .setHTML(html)
                     .addTo(map.current);
             });
 
