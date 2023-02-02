@@ -72,7 +72,7 @@ export default props => {
                 
                 new mapboxgl.Popup()
                     .setLngLat(coordinates)
-                    .setHTML(`<em>${name}</em><br/>${description}`)
+                    .setHTML(`<em>${name}</em><br/>${description}.<br/>Horray for ice-creamm!!!`)
                     .addTo(map.current);
             });
 
