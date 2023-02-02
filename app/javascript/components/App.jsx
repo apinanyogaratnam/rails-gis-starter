@@ -71,6 +71,7 @@ export default props => {
                 }
 
                 const isVulger = name.includes('Random');
+                const isSuitableRating = rating > 5;
 
                 const html = ```
                     <em>
@@ -81,7 +82,7 @@ export default props => {
                     <br/>
                     ${rating} / 10
                     <br />
-                    Horray for ice-creamm!!!
+                    ${isSuitableRating ? "Horray for ice-creamm!!!" : "This is not ice-cream. Stay away!"}
                 ```;
                 
                 new mapboxgl.Popup()
